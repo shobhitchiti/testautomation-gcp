@@ -1,0 +1,207 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "FastAPI",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/comments": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/User"
+              },
+              "title": "Response Getusers Comments Get",
+              "type": "array"
+            }
+          }
+        },
+        "operationId": "getusers_comments_get",
+        "summary": "Getusers",
+        "x-google-backend": {
+          "address": "https://test.com"
+        }
+      },
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/User"
+              },
+              "title": "Response Getusers Comments Post",
+              "type": "array"
+            }
+          }
+        },
+        "operationId": "getusers_comments_post",
+        "summary": "Getusers",
+        "x-google-backend": {
+          "address": "https://test.com"
+        }
+      }
+    },
+    "/photo": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/User"
+              },
+              "title": "Response Getusers Photo Get",
+              "type": "array"
+            }
+          }
+        },
+        "operationId": "getusers_photo_get",
+        "summary": "Getusers",
+        "x-google-backend": {
+          "address": "https://test.com"
+        }
+      }
+    },
+    "/update/password": {
+      "put": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/User"
+              },
+              "title": "Response Getusers Update Password Put",
+              "type": "array"
+            }
+          }
+        },
+        "operationId": "getusers_update_password_put",
+        "summary": "Getusers",
+        "x-google-backend": {
+          "address": "https://test.com"
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/User"
+              },
+              "title": "Response Getusers Users Get",
+              "type": "array"
+            }
+          }
+        },
+        "operationId": "getusers_users_get",
+        "summary": "Getusers",
+        "x-google-backend": {
+          "address": "https://test.com"
+        }
+      },
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/User"
+              },
+              "title": "Response Getusers Users Post",
+              "type": "array"
+            }
+          }
+        },
+        "operationId": "getusers_users_post",
+        "summary": "Getusers",
+        "x-google-backend": {
+          "address": "https://test.com"
+        }
+      },
+      "put": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/User"
+              },
+              "title": "Response Getusers Users Put",
+              "type": "array"
+            }
+          }
+        },
+        "operationId": "getusers_users_put",
+        "summary": "Getusers",
+        "x-google-backend": {
+          "address": "https://test.com"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "properties": {
+        "age": {
+          "title": "Age"
+        },
+        "email": {
+          "title": "Email",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "integer"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "email"
+      ],
+      "title": "User",
+      "type": "object"
+    }
+  },
+  "x-components": {}
+}

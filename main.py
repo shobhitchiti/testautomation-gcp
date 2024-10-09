@@ -1,34 +1,58 @@
-import json
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException, Depends, status
+from fastapi.security import APIKeyHeader
 from pydantic import BaseModel
+from typing import List, Optional
 
 app = FastAPI()
 
-# Root endpoint
-@app.get("/")
-def read_root():
-    return {"message": "Hello World"}
+# User Model
+class User(BaseModel):
+    id: int
+    name: str
+    email: str
+    age: Optional[int] = None
 
-# Post model
+# Post Model
 class Post(BaseModel):
+    id: int
     title: str
     content: str
-    published: bool
+    author_id: int
 
-# Endpoint to create a new post
-@app.post('/posts')
-def create_post(post: Post):
-    print(post.title)
-    print(post.content)
-    return {"message": "Post created successfully."}
+# Comment Model
+class Comment(BaseModel):
+    id: int
+    content: str
+    post_id: int
+    author_id: int
+
+# Sample  api
+
+@app.get("/users", response_model=List[User])
+def getusers():
+    return ("users list")
+
+@app.post("/users", response_model=List[User])
+def getusers():
+    return ("created users")
+
+@app.put("/users", response_model=List[User])
+def getusers():
+    return ("updated users")
+
+@app.get("/comments", response_model=List[User])
+def getusers():
+    return ("comments list")
 
 
-@app.get('/posts')
-def get_post():
-    return {"message": "Post fetched successfully."}
+@app.post("/comments", response_model=List[User])
+def getusers():
+    return ("comments updated")
 
-@app.on_event("startup")
-def save_openapi_schema():
-    openapi_schema = app.openapi()
-    with open("openapi_schema.json", "w") as f:
-        json.dump(openapi_schema, f)
+@app.get("/photo", response_model=List[User])
+def getusers():
+    return ("photo got")
+
+@app.put("/update/password", response_model=List[User])
+def getusers():
+    return ("password updated")
